@@ -1,6 +1,6 @@
 // Paths to the two images
-const image1 = "C:/Users/epicm/OneDrive/Documents/1UNIVERSITY/Workspace/Lab1/001.png";
-const image2 = "C:/Users/epicm/OneDrive/Documents/1UNIVERSITY/Workspace/Lab1/005.png";
+const image1 = "Images/LabOne001";
+const image2 = "Images/LabOne002";
 
 // Keeps track of which image is currently shown
 let showingFirstImage = true;
