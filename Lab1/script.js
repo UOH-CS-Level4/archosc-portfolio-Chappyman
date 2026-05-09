@@ -1,6 +1,6 @@
 // Paths to the two images
-const image1 = "Lab1/Images/LabOne001.png";
-const image2 = "Lab1/Images/LabOne002.png";
+const image1 = "Images/LabOne001.png";
+const image2 = "Images/LabOne002.png";
 
 // Keeps track of which image is currently shown
 let showingFirstImage = true;
