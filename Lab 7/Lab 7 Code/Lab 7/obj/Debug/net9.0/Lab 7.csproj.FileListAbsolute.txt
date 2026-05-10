@@ -1,0 +1,29 @@
+C:\Users\epicm\source\repos\Lab 7\Lab 7\bin\Debug\net9.0\Lab 7.exe
+C:\Users\epicm\source\repos\Lab 7\Lab 7\bin\Debug\net9.0\Lab 7.deps.json
+C:\Users\epicm\source\repos\Lab 7\Lab 7\bin\Debug\net9.0\Lab 7.runtimeconfig.json
+C:\Users\epicm\source\repos\Lab 7\Lab 7\bin\Debug\net9.0\Lab 7.dll
+C:\Users\epicm\source\repos\Lab 7\Lab 7\bin\Debug\net9.0\Lab 7.pdb
+C:\Users\epicm\source\repos\Lab 7\Lab 7\obj\Debug\net9.0\Lab 7.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\epicm\source\repos\Lab 7\Lab 7\obj\Debug\net9.0\Lab 7.AssemblyInfoInputs.cache
+C:\Users\epicm\source\repos\Lab 7\Lab 7\obj\Debug\net9.0\Lab 7.AssemblyInfo.cs
+C:\Users\epicm\source\repos\Lab 7\Lab 7\obj\Debug\net9.0\Lab 7.csproj.CoreCompileInputs.cache
+C:\Users\epicm\source\repos\Lab 7\Lab 7\obj\Debug\net9.0\Lab 7.dll
+C:\Users\epicm\source\repos\Lab 7\Lab 7\obj\Debug\net9.0\refint\Lab 7.dll
+C:\Users\epicm\source\repos\Lab 7\Lab 7\obj\Debug\net9.0\Lab 7.pdb
+C:\Users\epicm\source\repos\Lab 7\Lab 7\obj\Debug\net9.0\Lab 7.genruntimeconfig.cache
+C:\Users\epicm\source\repos\Lab 7\Lab 7\obj\Debug\net9.0\ref\Lab 7.dll
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab 7\Lab 7 Code\Lab 7\bin\Debug\net9.0\Lab 7.exe
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab 7\Lab 7 Code\Lab 7\bin\Debug\net9.0\Lab 7.deps.json
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab 7\Lab 7 Code\Lab 7\bin\Debug\net9.0\Lab 7.runtimeconfig.json
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab 7\Lab 7 Code\Lab 7\bin\Debug\net9.0\Lab 7.dll
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab 7\Lab 7 Code\Lab 7\bin\Debug\net9.0\Lab 7.pdb
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab 7\Lab 7 Code\Lab 7\obj\Debug\net9.0\Lab 7.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab 7\Lab 7 Code\Lab 7\obj\Debug\net9.0\Lab 7.AssemblyInfoInputs.cache
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab 7\Lab 7 Code\Lab 7\obj\Debug\net9.0\Lab 7.AssemblyInfo.cs
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab 7\Lab 7 Code\Lab 7\obj\Debug\net9.0\Lab 7.csproj.CoreCompileInputs.cache
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab 7\Lab 7 Code\Lab 7\obj\Debug\net9.0\Lab 7.sourcelink.json
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab 7\Lab 7 Code\Lab 7\obj\Debug\net9.0\Lab 7.dll
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab 7\Lab 7 Code\Lab 7\obj\Debug\net9.0\refint\Lab 7.dll
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab 7\Lab 7 Code\Lab 7\obj\Debug\net9.0\Lab 7.pdb
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab 7\Lab 7 Code\Lab 7\obj\Debug\net9.0\Lab 7.genruntimeconfig.cache
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab 7\Lab 7 Code\Lab 7\obj\Debug\net9.0\ref\Lab 7.dll
