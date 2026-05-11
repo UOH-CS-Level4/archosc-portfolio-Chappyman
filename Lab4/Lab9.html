@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="topnav">
+      <a href="index.html">Home</a>
+      <a href="GitHub1.html">Lab 1</a>
+      <a href="GitHub2.html">Lab 2</a>
+      <a href="GitHub3.html">Lab 3</a>
+      <a href="Lab4.html">Lab 4</a>
+      <a href="Lab5.html">Lab 5</a>
+      <a href="Lab6.html">Lab 6</a>
+      <a href="Lab7.html">Lab 7</a>
+      <a href="Lab8.html">Lab 8</a>
+      <a href="Lab9.html" class="active">Lab 9 (Current)</a>
+      <button id="theme-toggle" type="button">Dark</button>
+    </div>
+
+    <h1>My Portfolio</h1>
+    <h2 class="name">By Matthew Chapman</h2>
+    <p class="description"><b>This portfolio contains screenshots and definitions for all of the tasks I have completed in my lab.</b></p>
+    <p>In this lab I got experience with CPU scheduling algorithms, which are the methods an operating system uses to decide which process gets access to the CPU and when. I implemented two main algorithms in C# — First-Come-First-Serve (FCFS) and Round-Robin — using a set of predefined processes with different arrival times and execution times. FCFS runs jobs in the order they arrive, while Round-Robin chops CPU time into slices and rotates between processes, much more closely resembling how a real OS behaves. Playing around with different time quantum values (1, 3, 4, and 6) made it clear how that single number can have a big effect on turnaround time. The Gantt charts were one of the most useful parts — seeing the schedule laid out visually made it a lot easier to spot inefficiencies than just staring at numbers in a table. Overall this lab shifted scheduling from an abstract textbook concept to something I actually had to reason about and debug.</b></p>
+    <p>Lab 9 focused on </p></p>
+
+
+
+
+<h2><b>Lab 9</b></h2>
+
+<p>The allocation matrix is:<br>P1: R1=0, R2=1, R3=0<br>P2: R1=2, R2=0, R3=0<br>P3: R1=3, R2=0, R3=2<br>P4: R1=2, R2=1, R3=1<br>P5: R1=0, R2=0, R3=2</p>
+
+<p>The maximum demand matrix (Table 1 from the brief) is:<br>P1: R1=7, R2=5, R3=4<br>P2: R1=3, R2=2, R3=2<br>P3: R1=9, R2=0, R3=2<br>P4: R1=2, R2=2, R3=2<br>P5: R1=4, R2=4, R3=4</p>
+
+<p>The Need matrix is calculated as Need = Maximum - Allocation:<br>P1: R1=7, R2=4, R3=4<br>P2: R1=1, R2=2, R3=2<br>P3: R1=6, R2=0, R3=0<br>P4: R1=0, R2=1, R3=1<br>P5: R1=4, R2=4, R3=2</p>
+
+<h3><b>Task 1 – Manual Analysis (R1=10, R2=5, R3=7)</b></h3>
+
+<p><b>1. Select an initial state</b></p>
+
+<p>Total resources are R1=10, R2=5, R3=7. Adding up everything currently allocated gives R1=7, R2=2, R3=5. So the available resources are:<br>Available = Total - Allocated = (10-7, 5-2, 7-5) = [R1=3, R2=3, R3=2]</p>
+
+<p><b>2. Apply the Banker's Algorithm to determine if the state is safe or unsafe</b></p>
+
+<p>We set Work = Available = [3, 3, 2]. At each step we look for a process whose Need is less than or equal to Work. When we find one, we let it run, add its allocation back into Work, and repeat until all processes are done or we get stuck.</p>
+
+<p>Iteration 1 (Work = [3, 3, 2]):<br>P1: Need=[7,4,4] → 7 > 3, cannot run<br>P2: Need=[1,2,2] → 1≤3, 2≤3, 2≤2, P2 can run<br>Work = [3+2, 3+0, 2+0] = [5, 3, 2]</p>
+
+<p>Iteration 2 (Work = [5, 3, 2]):<br>P1: Need=[7,4,4] → 7 > 5, cannot run<br>P3: Need=[6,0,0] → 6 > 5, cannot run<br>P4: Need=[0,1,1] → 0≤5, 1≤3, 1≤2, P4 can run<br>Work = [5+2, 3+1, 2+1] = [7, 4, 3]</p>
+
+<p>Iteration 3 (Work = [7, 4, 3]):<br>P1: Need=[7,4,4] → 7≤7, 4≤4, but 4 > 3, cannot run<br>P3: Need=[6,0,0] → 6≤7, 0≤4, 0≤3, P3 can run<br>Work = [7+3, 4+0, 3+2] = [10, 4, 5]</p>
+
+<p>Iteration 4 (Work = [10, 4, 5]):<br>P1: Need=[7,4,4] → 7≤10, 4≤4, 4≤5, P1 can run<br>Work = [10+0, 4+1, 5+0] = [10, 5, 5]</p>
+
+<p>Iteration 5 (Work = [10, 5, 5]):<br>P5: Need=[4,4,2] → 4≤10, 4≤5, 2≤5, P5 can run<br>Work = [10+0, 5+0, 5+2] = [10, 5, 7]</p>
+
+<p>All five processes completed successfully. The system is in a safe state.</p>
+
+<p><b>3. Explain why the state is safe</b></p>
+
+<p>The state is safe because at every iteration there was always at least one process whose remaining resource need could be satisfied by what was currently available. No process was ever permanently blocked. As each process finished and released its resources, it freed up enough for the next one to proceed. This guarantees that deadlock cannot occur in this state.</p>
+
+<p><b>4. Safe sequence</b></p>
+
+<p>P2 → P4 → P3 → P1 → P5</p>
+
+<h3><b>Task 2 – R1 Increased to 12 (R1=12, R2=5, R3=7)</b></h3>
+
+<p><b>1. Recalculate available resources</b></p>
+
+<p>With R1 now at 12 and allocation unchanged:<br>Available = (12-7, 5-2, 7-5) = [R1=5, R2=3, R3=2]</p>
+
+<p><b>2. Apply the Banker's Algorithm</b></p>
+
+<p>Set Work = [5, 3, 2].</p>
+
+<p>Iteration 1 (Work = [5, 3, 2]):<br>P1: Need=[7,4,4] → 7 > 5, cannot run<br>P2: Need=[1,2,2] → 1≤5, 2≤3, 2≤2, P2 runs<br>Work = [5+2, 3+0, 2+0] = [7, 3, 2]</p>
+
+<p>Iteration 2 (Work = [7, 3, 2]):<br>P1: Need=[7,4,4] → 7≤7, but 4 > 3, cannot run<br>P3: Need=[6,0,0] → 6≤7, 0≤3, 0≤2, P3 runs (one iteration earlier than Task 1)<br>Work = [7+3, 3+0, 2+2] = [10, 3, 4]</p>
+
+<p>Iteration 3 (Work = [10, 3, 4]):<br>P1: Need=[7,4,4] → 7≤10, but 4 > 3, cannot run<br>P4: Need=[0,1,1] → 0≤10, 1≤3, 1≤4, P4 runs<br>Work = [10+2, 3+1, 4+1] = [12, 4, 5]</p>
+
+<p>Iteration 4 (Work = [12, 4, 5]):<br>P1: Need=[7,4,4] → 7≤12, 4≤4, 4≤5, P1 runs<br>Work = [12+0, 4+1, 5+0] = [12, 5, 5]</p>
+
+<p>Iteration 5 (Work = [12, 5, 5]):<br>P5: Need=[4,4,2] → 4≤12, 4≤5, 2≤5, P5 runs<br>Work = [12+0, 5+0, 5+2] = [12, 5, 7]</p>
+
+<p>All five processes completed. The system is in a safe state.</p>
+
+<p><b>3. Explain why the state is still safe</b></p>
+
+<p>The system is still safe, but the order changed slightly. The extra 2 units of R1 mean that after P2 finishes and releases its allocation, Work already has enough R1 to satisfy P3's need of 6 straight away. In Task 1, P3 had to wait until after P4 because Work[R1] was only 5 at that point. Having more R1 gives the OS more flexibility when deciding which process to schedule next, without compromising safety.</p>
+
+<p><b>4. Safe sequence</b></p>
+
+<p>P2 → P3 → P4 → P1 → P5</p>
+
+<h3><b>Task 3 – R2 Also Increased to 7 (R1=12, R2=7, R3=7)</b></h3>
+
+<p><b>1. Recalculate available resources</b></p>
+
+<p>Available = (12-7, 7-2, 7-5) = [R1=5, R2=5, R3=2]</p>
+
+<p><b>2. Apply the Banker's Algorithm</b></p>
+
+<p>Set Work = [5, 5, 2].</p>
+
+<p>Iteration 1 (Work = [5, 5, 2]):<br>P1: Need=[7,4,4] → 7 > 5, cannot run<br>P2: Need=[1,2,2] → 1≤5, 2≤5, 2≤2, P2 runs<br>Work = [5+2, 5+0, 2+0] = [7, 5, 2]</p>
+
+<p>Iteration 2 (Work = [7, 5, 2]):<br>P1: Need=[7,4,4] → 7≤7, 4≤5, but 4 > 2, cannot run<br>P3: Need=[6,0,0] → 6≤7, 0≤5, 0≤2, P3 runs<br>Work = [7+3, 5+0, 2+2] = [10, 5, 4]</p>
+
+<p>Iteration 3 (Work = [10, 5, 4]):<br>P1: Need=[7,4,4] → 7≤10, 4≤5, 4≤4, P1 runs — earlier than in both previous tasks<br>Work = [10+0, 5+1, 4+0] = [10, 6, 4]</p>
+
+<p>Iteration 4 (Work = [10, 6, 4]):<br>P4: Need=[0,1,1] → 0≤10, 1≤6, 1≤4, P4 runs<br>Work = [10+2, 6+1, 4+1] = [12, 7, 5]</p>
+
+<p>Iteration 5 (Work = [12, 7, 5]):<br>P5: Need=[4,4,2] → 4≤12, 4≤7, 2≤5, P5 runs<br>Work = [12+0, 7+0, 5+2] = [12, 7, 7]</p>
+
+<p>All five processes completed. The system is in a safe state.</p>
+
+<p><b>3. Reflect on the order of process execution and how additional resources affect system performance</b></p>
+
+<p>Across all three tasks the system stayed safe, but the sequence changed each time resources were added. In Task 1 the safe sequence was P2→P4→P3→P1→P5. In Task 2, when R1 went up to 12, P3 moved earlier because it could now get its R1 need of 6 satisfied sooner, giving P2→P3→P4→P1→P5. In Task 3, when R2 also went up to 7, P1 moved from near the end all the way to third place because its R2 need of 4 could now be met earlier, giving P2→P3→P1→P4→P5.</p>
+
+<p>What this shows is that adding resources doesn't just keep the system safe, it also reduces how long processes have to wait. In a real system this would mean better responsiveness and higher throughput overall. Even a small increase in one resource type can have a noticeable knock-on effect on the whole scheduling order.</p>
+
+<h3><b>Task 4 – C# Implementation of Banker's Algorithm</b></h3>
+
+<p><b>Write a C# program to simulate Banker's Algorithm and determine whether a given state is safe.</b></p>
+
+<p>The program takes user input for the number of processes and resource types, reads the allocation and maximum demand matrices, calculates the Need matrix, then runs the safety algorithm and prints either the safe sequence or an unsafe state message.</p>
+
+<pre>
+using System;
+
+class BankersAlgorithm
+{
+    // Finds a safe sequence, returns null if the state is unsafe
+    static int[]? FindSafeSequence(int[,] need, int[,] alloc, int[] available, int p, int r)
+    {
+        int[] work    = (int[])available.Clone(); // working copy of available resources
+        bool[] finish = new bool[p];              // tracks which processes have finished
+        int[] safeSeq = new int[p];
+        int count = 0;
+
+        while (count &lt; p)
+        {
+            bool found = false;
+            for (int i = 0; i &lt; p; i++)
+            {
+                if (finish[i]) continue; // already finished, skip
+
+                // Check if this process's need can be satisfied by current work
+                bool canRun = true;
+                for (int j = 0; j &lt; r; j++)
+                    if (need[i, j] &gt; work[j]) { canRun = false; break; }
+
+                if (canRun)
+                {
+                    // Simulate process finishing - release resources back to work
+                    for (int j = 0; j &lt; r; j++)
+                        work[j] += alloc[i, j];
+
+                    safeSeq[count++] = i;
+                    finish[i] = true;
+                    found = true;
+                }
+            }
+
+            // If nothing ran this pass, we're stuck - unsafe state
+            if (!found) return null;
+        }
+
+        return safeSeq;
+    }
+
+    static void Main()
+    {
+        Console.Write("Number of processes: ");
+        int p = int.Parse(Console.ReadLine()!);
+
+        Console.Write("Number of resource types: ");
+        int r = int.Parse(Console.ReadLine()!);
+
+        int[,] alloc = new int[p, r];
+        int[,] maxD  = new int[p, r];
+        int[,] need  = new int[p, r];
+
+        Console.WriteLine("\nEnter allocation matrix:");
+        for (int i = 0; i &lt; p; i++)
+        {
+            Console.Write($"  P{i + 1}: ");
+            string[] vals = Console.ReadLine()!.Trim().Split();
+            for (int j = 0; j &lt; r; j++)
+                alloc[i, j] = int.Parse(vals[j]);
+        }
+
+        Console.WriteLine("\nEnter maximum demand matrix:");
+        for (int i = 0; i &lt; p; i++)
+        {
+            Console.Write($"  P{i + 1}: ");
+            string[] vals = Console.ReadLine()!.Trim().Split();
+            for (int j = 0; j &lt; r; j++)
+            {
+                maxD[i, j] = int.Parse(vals[j]);
+                need[i, j] = maxD[i, j] - alloc[i, j]; // Need = Max - Allocation
+
+                if (need[i, j] &lt; 0)
+                    throw new Exception($"Allocation exceeds maximum for P{i + 1}");
+            }
+        }
+
+        Console.Write("\nEnter available resources: ");
+        string[] avVals = Console.ReadLine()!.Trim().Split();
+        int[] available = new int[r];
+        for (int j = 0; j &lt; r; j++)
+            available[j] = int.Parse(avVals[j]);
+
+        int[]? seq = FindSafeSequence(need, alloc, available, p, r);
+
+        Console.WriteLine();
+        if (seq != null)
+        {
+            Console.Write("Safe Sequence: ");
+            for (int k = 0; k &lt; p; k++)
+                Console.Write((k &gt; 0 ? " -> " : "") + $"P{seq[k] + 1}");
+            Console.WriteLine("\nSystem is in a safe state.");
+        }
+        else
+        {
+            Console.WriteLine("System is in an UNSAFE state - no safe sequence exists.");
+        }
+    }
+}
+</pre>
+
+    <img src="Images/Lab9/001.png" alt="Lab 9 image 2" style="display: block;">   
+
+
+<p><b>How the program works</b></p>
+
+<p>The user enters the number of processes and resource types first, then the allocation and maximum demand matrices row by row. The program calculates Need = Max - Allocation for each entry automatically, and throws an error if any allocation value is larger than the maximum since that would be an invalid state.</p>
+
+<p>The main logic is in FindSafeSequence. It starts with a Work vector equal to Available and loops through all unfinished processes looking for one whose Need is less than or equal to Work. When it finds one, it marks it finished and adds its allocation back to Work, simulating the process completing and releasing its resources. This repeats until either all processes finish (safe) or a full pass goes by without any process being able to run (unsafe).</p>
+
+<p>Example output using Task 1 values:<br>Safe Sequence: P2 -> P4 -> P3 -> P1 -> P5<br>System is in a safe state.</p>
+
+<h3><b>Independent Learning</b></h3>
+
+<p><b>1. Deadlock Prevention and Avoidance</b></p>
+
+<p>Deadlock can only happen when four conditions all hold at the same time: mutual exclusion (only one process can use a resource at a time), hold-and-wait (a process holds something while waiting for more), no preemption (you can't forcibly take a resource away), and circular wait (a cycle of processes each waiting on the next one). Deadlock prevention works by making sure at least one of these four conditions can never be true.</p>
+
+<p>For example, requiring all processes to request every resource they'll ever need right at the start eliminates hold-and-wait. Forcing resources to always be requested in a fixed numerical order eliminates circular wait, because a cycle can't form if everyone goes in the same direction. Prevention is straightforward to implement but tends to be wasteful since processes have to claim everything upfront even if they end up not needing it all.</p>
+
+<p>Deadlock avoidance is more flexible. Instead of restricting behaviour upfront, it allows requests dynamically but only grants them when the resulting state is still safe. That's exactly what Banker's Algorithm does. The trade-off is that processes have to declare their maximum resource need in advance, and the OS has to run a safety check every time a request comes in. It uses resources more efficiently than prevention but has more runtime overhead.</p>
+
+<p><b>2. Real-world applications</b></p>
+
+<p>In database systems, when multiple transactions run at the same time and need to lock rows or tables, the lock manager uses techniques like strict resource ordering to prevent deadlocks forming between competing transactions.</p>
+
+<p>In real-time and safety-critical systems such as aircraft or factory control systems, admission control is used to guarantee that any safety-critical task always gets the resources it needs within a fixed time limit. A flight control system stalling because resources are tied up somewhere else is not acceptable.</p>
+
+<p>Cloud platforms like Kubernetes use resource quotas to stop any single application from consuming all the available CPU or memory on a cluster, which is effectively a coarse form of deadlock avoidance at the infrastructure level.</p>
+
+<p>The Linux kernel uses priority inheritance on mutexes to handle priority inversion, which is a related problem where a low-priority process accidentally blocks a high-priority one by holding a resource it needs.</p>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
