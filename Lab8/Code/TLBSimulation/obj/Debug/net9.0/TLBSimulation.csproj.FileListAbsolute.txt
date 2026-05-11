@@ -1,0 +1,29 @@
+C:\Users\epicm\TLBSimulation\bin\Debug\net9.0\TLBSimulation.exe
+C:\Users\epicm\TLBSimulation\bin\Debug\net9.0\TLBSimulation.deps.json
+C:\Users\epicm\TLBSimulation\bin\Debug\net9.0\TLBSimulation.runtimeconfig.json
+C:\Users\epicm\TLBSimulation\bin\Debug\net9.0\TLBSimulation.dll
+C:\Users\epicm\TLBSimulation\bin\Debug\net9.0\TLBSimulation.pdb
+C:\Users\epicm\TLBSimulation\obj\Debug\net9.0\TLBSimulation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\epicm\TLBSimulation\obj\Debug\net9.0\TLBSimulation.AssemblyInfoInputs.cache
+C:\Users\epicm\TLBSimulation\obj\Debug\net9.0\TLBSimulation.AssemblyInfo.cs
+C:\Users\epicm\TLBSimulation\obj\Debug\net9.0\TLBSimulation.csproj.CoreCompileInputs.cache
+C:\Users\epicm\TLBSimulation\obj\Debug\net9.0\TLBSimulation.dll
+C:\Users\epicm\TLBSimulation\obj\Debug\net9.0\refint\TLBSimulation.dll
+C:\Users\epicm\TLBSimulation\obj\Debug\net9.0\TLBSimulation.pdb
+C:\Users\epicm\TLBSimulation\obj\Debug\net9.0\TLBSimulation.genruntimeconfig.cache
+C:\Users\epicm\TLBSimulation\obj\Debug\net9.0\ref\TLBSimulation.dll
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab8\Code\TLBSimulation\bin\Debug\net9.0\TLBSimulation.exe
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab8\Code\TLBSimulation\bin\Debug\net9.0\TLBSimulation.deps.json
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab8\Code\TLBSimulation\bin\Debug\net9.0\TLBSimulation.runtimeconfig.json
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab8\Code\TLBSimulation\bin\Debug\net9.0\TLBSimulation.dll
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab8\Code\TLBSimulation\bin\Debug\net9.0\TLBSimulation.pdb
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab8\Code\TLBSimulation\obj\Debug\net9.0\TLBSimulation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab8\Code\TLBSimulation\obj\Debug\net9.0\TLBSimulation.AssemblyInfoInputs.cache
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab8\Code\TLBSimulation\obj\Debug\net9.0\TLBSimulation.AssemblyInfo.cs
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab8\Code\TLBSimulation\obj\Debug\net9.0\TLBSimulation.csproj.CoreCompileInputs.cache
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab8\Code\TLBSimulation\obj\Debug\net9.0\TLBSimulation.sourcelink.json
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab8\Code\TLBSimulation\obj\Debug\net9.0\TLBSimulation.dll
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab8\Code\TLBSimulation\obj\Debug\net9.0\refint\TLBSimulation.dll
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab8\Code\TLBSimulation\obj\Debug\net9.0\TLBSimulation.pdb
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab8\Code\TLBSimulation\obj\Debug\net9.0\TLBSimulation.genruntimeconfig.cache
+C:\Users\epicm\OneDrive\Documents\1UNIVERSITY\Workspace\git pull\Lab8\Code\TLBSimulation\obj\Debug\net9.0\ref\TLBSimulation.dll
