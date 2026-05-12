@@ -2,7 +2,6 @@
 const image1 = "Images/LabOne001.png";
 const image2 = "Images/LabOne002.png";
 
-// Keeps track of which image is currently shown
 let showingFirstImage = true;
 
 // Get references to HTML elements
@@ -22,6 +21,6 @@ switchButton.addEventListener("click", function () {
         displayedImage.src = image1;
     }
 
-    // Flip the boolean so next click switches again
+    // flip the boolean so next click switches again
     showingFirstImage = !showingFirstImage;
 });
