@@ -244,27 +244,6 @@ class BankersAlgorithm
 <p>The main logic is in FindSafeSequence. It starts with a Work vector equal to Available and loops through all unfinished processes looking for one whose Need is less than or equal to Work. When it finds one, it marks it finished and adds its allocation back to Work, simulating the process completing and releasing its resources. This repeats until either all processes finish (safe) or a full pass goes by without any process being able to run (unsafe).</p>
 
 <p>Example output using Task 1 values:<br>Safe Sequence: P2 -> P4 -> P3 -> P1 -> P5<br>System is in a safe state.</p>
-
-<h3><b>Independent Learning</b></h3>
-
-<p><b>1. Deadlock Prevention and Avoidance</b></p>
-
-<p>Deadlock can only happen when four conditions all hold at the same time: mutual exclusion (only one process can use a resource at a time), hold-and-wait (a process holds something while waiting for more), no preemption (you can't forcibly take a resource away), and circular wait (a cycle of processes each waiting on the next one). Deadlock prevention works by making sure at least one of these four conditions can never be true.</p>
-
-<p>For example, requiring all processes to request every resource they'll ever need right at the start eliminates hold-and-wait. Forcing resources to always be requested in a fixed numerical order eliminates circular wait, because a cycle can't form if everyone goes in the same direction. Prevention is straightforward to implement but tends to be wasteful since processes have to claim everything upfront even if they end up not needing it all.</p>
-
-<p>Deadlock avoidance is more flexible. Instead of restricting behaviour upfront, it allows requests dynamically but only grants them when the resulting state is still safe. That's exactly what Banker's Algorithm does. The trade-off is that processes have to declare their maximum resource need in advance, and the OS has to run a safety check every time a request comes in. It uses resources more efficiently than prevention but has more runtime overhead.</p>
-
-<p><b>2. Real-world applications</b></p>
-
-<p>In database systems, when multiple transactions run at the same time and need to lock rows or tables, the lock manager uses techniques like strict resource ordering to prevent deadlocks forming between competing transactions.</p>
-
-<p>In real-time and safety-critical systems such as aircraft or factory control systems, admission control is used to guarantee that any safety-critical task always gets the resources it needs within a fixed time limit. A flight control system stalling because resources are tied up somewhere else is not acceptable.</p>
-
-<p>Cloud platforms like Kubernetes use resource quotas to stop any single application from consuming all the available CPU or memory on a cluster, which is effectively a coarse form of deadlock avoidance at the infrastructure level.</p>
-
-<p>The Linux kernel uses priority inheritance on mutexes to handle priority inversion, which is a related problem where a low-priority process accidentally blocks a high-priority one by holding a resource it needs.</p>
-    
     <script src="script.js"></script>
   </body>
 </html>
