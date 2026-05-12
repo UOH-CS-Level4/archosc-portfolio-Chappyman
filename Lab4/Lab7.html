@@ -40,32 +40,8 @@
     <img src="Images/Lab7/009.png" alt="Lab 7 image 9" style="display: block;">
     <img src="Images/Lab7/010.png" alt="Lab 7 image 10" style="display: block;">
 
-<h3>Independent Learning</h3>
 
-<h4><b>1. Deadlock Prevention and Avoidance</b></h4>
-
-<p>
-A deadlock happens when processes are stuck waiting on each other to release resources, so none of them can continue. This usually requires four conditions: mutual exclusion, hold and wait, no preemption, and circular waiting.
-</p>
-
-<p>
-Deadlock prevention works by making sure at least one of these conditions cannot occur. For example, systems can force processes to request all resources at once, or enforce an ordering so resources are always requested in a fixed sequence.
-</p>
-
-<p>
-Deadlock avoidance is more flexible. Instead of blocking conditions completely, the system checks whether granting a resource request would leave the system in a safe state. If not, the request is delayed. A common example is the Banker’s Algorithm.
-</p>
-
-<h4><b>2. Real-world Applications</b></h4>
-
-<p>
-Deadlock handling is used in most operating systems to manage shared resources like memory, printers, and files. Databases also use similar ideas to manage transactions and avoid processes blocking each other indefinitely.
-</p>
-
-<p>
-In cloud systems, resource scheduling helps prevent situations where virtual machines compete for limited CPU or memory. Embedded systems also rely on strict resource control because timing and reliability are critical.
-</p>
-
+    <p><b>1. Priority Scheduling</b></p><p>Priority scheduling is a CPU scheduling algorithm where each process is assigned a priority value. The CPU is given to the process with the highest priority first. Processes with the same priority are usually handled using First Come First Served (FCFS). Priority scheduling can be preemptive, where a higher priority process interrupts the current process, or non-preemptive, where the running process finishes before another begins. One disadvantage is starvation, where low priority processes may never get CPU time if higher priority tasks keep arriving.</p> <p><b>2. Shortest Job Next (SJN)</b></p><p>Shortest Job Next (SJN), also called Shortest Job First (SJF), is a scheduling algorithm that selects the process with the smallest execution time first. It is mainly used in batch systems and helps reduce average waiting time. SJN can be efficient when process burst times are known in advance. However, long processes may suffer from starvation if shorter jobs continue to arrive.</p>
 
     <script src="script.js"></script>
     <script src="Secret.js"></script>

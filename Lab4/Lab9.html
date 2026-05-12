@@ -245,6 +245,33 @@ class BankersAlgorithm
 <p>The main logic is in FindSafeSequence. It starts with a Work vector equal to Available and loops through all unfinished processes looking for one whose Need is less than or equal to Work. When it finds one, it marks it finished and adds its allocation back to Work, simulating the process completing and releasing its resources. This repeats until either all processes finish (safe) or a full pass goes by without any process being able to run (unsafe).</p>
 
 <p>Example output using Task 1 values:<br>Safe Sequence: P2 -> P4 -> P3 -> P1 -> P5<br>System is in a safe state.</p>
+
+<h3>Independent Learning</h3>
+
+<h4><b>1. Deadlock Prevention and Avoidance</b></h4>
+
+<p>
+A deadlock happens when processes are stuck waiting on each other to release resources, so none of them can continue. This usually requires four conditions: mutual exclusion, hold and wait, no preemption, and circular waiting.
+</p>
+
+<p>
+Deadlock prevention works by making sure at least one of these conditions cannot occur. For example, systems can force processes to request all resources at once, or enforce an ordering so resources are always requested in a fixed sequence.
+</p>
+
+<p>
+Deadlock avoidance is more flexible. Instead of blocking conditions completely, the system checks whether granting a resource request would leave the system in a safe state. If not, the request is delayed. A common example is the Banker’s Algorithm.
+</p>
+
+<h4><b>2. Real-world Applications</b></h4>
+
+<p>
+Deadlock handling is used in most operating systems to manage shared resources like memory, printers, and files. Databases also use similar ideas to manage transactions and avoid processes blocking each other indefinitely.
+</p>
+
+<p>
+In cloud systems, resource scheduling helps prevent situations where virtual machines compete for limited CPU or memory. Embedded systems also rely on strict resource control because timing and reliability are critical.
+</p>
+
     <script src="script.js"></script>
     <script src="Secret.js"></script>
   </body>
